@@ -59,7 +59,7 @@
       become: yes
     - name: Get eshop from Git
       git:
-        repo: "https://github.com/Razvie-arr/4IT572_ansible"
+        repo: "https://github.com/Razvie-arr/4IT572_docker"
         dest: ./app
     - name: Build Docker with eshop
       shell: cd app && docker build -t myeshop:latest .
