@@ -63,7 +63,7 @@
         repo: 'https://github.com/Razvie-arr/4IT572_docker'
         dest: ./app
     - name: Build Docker with eshop
-      shell:
+      shell: cd app && docker build -t myeshop:latest .
       become: yes
     - name: Run Docker with eshop
       shell: docker run -p 80:3000 myeshop
