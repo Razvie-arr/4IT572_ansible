@@ -13,7 +13,7 @@
         network:
           assign_public_ip: yes
         wait: yes
-        count: 2
+        count: 1
 
         security_group: eshop
         aws_access_key: "{{ access_key }}"
@@ -63,7 +63,7 @@
         repo: 'https://github.com/Razvie-arr/4IT572_docker'
         dest: ./app
     - name: Build Docker with eshop
-      shell: cd app && docker build -t myeshop:latest .
+      shell:
       become: yes
     - name: Run Docker with eshop
       shell: docker run -p 80:3000 myeshop
